@@ -1,0 +1,71 @@
+.detailGroup {
+    padding: 5.6svh 0;
+}
+.detailGroup-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+.detailGroupBox {
+    background-color: var(--detailGroupBoxBg);
+    border-radius: 20px;
+    padding: 30px;
+    transition: 0.3s background-color;
+    animation: fadein-noopacity 1s forwards;
+    scale: .8;
+    width: 50%;
+    min-height: 100%;
+}
+.detailGroupBox:hover {
+    background-color: var(--detailGroupBoxBgHover);
+}
+.detailGroupTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    padding-bottom: 1rem;
+}
+.detailGroupTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.35rem;
+    font-weight: 100;
+    user-select: none;
+    pointer-events: none;
+    color: var(--text-clr);
+}
+.detailGroupTitle svg {
+    width: 32px;
+    height: 32px;
+    color: var(--text-clr);
+}
+.detailGroupParagraph {
+    font-size: 1.15rem;
+    font-weight: 100;
+    color: var(--text-clr);
+}
+.detailGroupParagraph h3 {
+    margin: 1rem 0;
+}
+.detailGroupParagraph li {
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+}
+.detailGroupParagraph li::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--text-clr);
+  margin-right: .5rem;
+}
+.detailGroupImages {
+    display: flex;
+    align-items: start;
+    gap: 5px;
+    justify-content: space-between;
+}

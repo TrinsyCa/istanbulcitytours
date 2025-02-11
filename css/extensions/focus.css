@@ -1,0 +1,128 @@
+.focus {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+.focus-container {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+.focus-anim .focus-detail {
+    animation: cometo-screen linear forwards;
+    animation-timeline: view();
+    animation-range-start: 200px;
+    animation-range-end: 650px;
+    transform: translateX(-100px);
+    opacity: 0;
+}
+.focus-anim-r .focus-detail {
+    animation: cometo-screen linear forwards;
+    animation-timeline: view();
+    animation-range-start: 200px;
+    animation-range-end: 650px;
+    transform: translateX(100px);
+    opacity: 0;
+}
+.focus-anim-open .focus-detail {
+    animation: cometo-screen 1s ease-in-out forwards;
+    transform: translateX(-100px);
+    opacity: 0;
+}
+.focus-detail {
+    width: 50%;
+}
+.focus-detail h1 {
+    padding-bottom: 1rem;
+}
+.focus-detail p {
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+.focus-detail .focus-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.focus-detail a,
+.focus-detail button {
+    font-size: 20px !important;
+}
+.focus-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.focus-img {
+    width: 50%;
+    height: 100%;
+    user-select: none;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.focus-img img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    pointer-events: none;
+    user-select: none;
+}
+.focus-anim.focus-img-container .focus-img:last-child,
+.focus-anim-r.focus-img-container .focus-img:last-child,
+.focus-anim .focus-img {
+    animation: cometo-screen linear forwards;
+    animation-timeline: view();
+    animation-range-start: 200px;
+    animation-range-end: 650px;
+    transform: translateX(100px);
+    opacity: 0;
+}
+.focus-anim.focus-img-container .focus-img:first-child,
+.focus-anim-r.focus-img-container .focus-img:first-child,
+.focus-anim-r .focus-img {
+    animation: cometo-screen linear forwards;
+    animation-timeline: view();
+    animation-range-start: 200px;
+    animation-range-end: 650px;
+    transform: translateX(-100px);
+    opacity: 0;
+}
+.focus-anim-open .focus-img {
+    animation: cometo-screen 1s ease-in-out forwards;
+    transform: translateX(100px);
+    opacity: 0;
+}
+.focus-container .focus-img article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgba(255,255,255, 0.4);
+    color: var(--text-clr);
+    transition: 0.25s opacity ease-in-out;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+}
+body.bg-black .focus-container .focus-img article {
+    background-color: rgba(0,0,0, 0.4);
+}
+.focus-container .focus-img article h2 {
+    font-size: 4rem;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: skew(-5deg) scaleY(1.3);
+}
+.focus-container .focus-img:hover article {
+    opacity: 1;
+}
