@@ -26,11 +26,15 @@ body.bg-black {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text-clr);
 }
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    height: 100svh;
+}
 body {
     width: 100%;
     min-height: 100svh;
     overflow-x: hidden;
-    scroll-behavior: smooth;
     opacity: 0;
     animation: opacityAnim 1s forwards ease-in-out;
     animation-delay: 0.2s;
@@ -41,10 +45,6 @@ body {
 body.bg-black {
     background-color: var(--bg-clr);
     color: white;
-}
-body.lock {
-    height: 100svh;
-    overflow: hidden;
 }
 ::selection {
     background-color: var(--text-clr);
@@ -62,7 +62,7 @@ body.lock {
     padding: 30px 0;
 }
 .section-container {
-    width: 70%;
+    width: 75%;
     margin: auto;
 }
 .trustindex-container {
@@ -205,6 +205,13 @@ nav {
     padding-bottom: 12px;
     display: flex;
     justify-content: center;
+    transition: 0.3s top, 0.3s opacity;
+}
+.close-fade {
+    top: -50px;
+    opacity: 0;
+    transition: 0.25s top, 0.2s opacity;
+    pointer-events: none;
 }
 body:not(.bg-black) nav,
 body:not(.bg-black) nav .menu-box {
@@ -230,9 +237,9 @@ nav.relative .menu-box {
 }
 .nav-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 140px;
-    width: 70%;
+    width: 82%;
 }
 .nav-container .menu-side {
     display: flex;
@@ -246,6 +253,8 @@ nav.relative .menu-box {
     display: flex;
     align-items: center;
     text-decoration: none;
+    position: relative;
+    z-index: 999999;
 }
 .nav-container .nav-logo img {
     max-height: 65px;
@@ -254,8 +263,38 @@ nav.relative .menu-box {
 }
 .nav-menus {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 25px;
+    width: 100%;
+}
+.nav-menus.right-side {
+    justify-content: flex-end;
+    width: fit-content;
+}
+.nav-container .menuBars {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    transition: color 0.4s;
+}
+.nav-container .menuBars.closeMenu {
+    position: absolute;
+    top: 1.5rem;
+    right: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 0;
+    opacity: 0;
+    transition: 0.5s scale, 0.5s opacity;
+    transition-delay: 0.15s;
+}
+.nav-container.scrolled .menuBars svg path {
+    fill: var(--dark);
 }
 .main-menu-btn {
     background-color: transparent;
@@ -265,6 +304,8 @@ nav.relative .menu-box {
     position: relative;
     font-size: 1.2rem;
     cursor: pointer;
+    transition: 0.35s margin-top;
+    white-space: nowrap;
 }
 .main-menu-btn::after {
     content: '';
@@ -296,7 +337,8 @@ nav.relative .menu-box {
     opacity: 0;
     transform: translateY(10px) scale(1.2);
     pointer-events: none;
-    transition: 0.3s opacity, 0.3s transform, 0.2s background-color;
+    left: 0;
+    transition: 0.3s opacity, 0.3s transform,0.2s background-color;
     padding: 5px 8px;
     border-radius: 0 0 10px 10px;
 }
@@ -312,6 +354,7 @@ nav .menu-btn {
     display: flex;
     align-items: center;
     padding: 5px 0;
+    white-space: nowrap;
 }
 nav .menu-btn span {
     position: relative;
@@ -482,6 +525,11 @@ footer {
 .footer-copyright svg {
     width: 20px;
     height: 20px;
+}
+footer .social-header {
+    display: none;
+    justify-content: center;
+    margin-bottom: 0.5rem;
 }
 .footer-bottom::after {
     content: '';

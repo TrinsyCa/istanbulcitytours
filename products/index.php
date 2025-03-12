@@ -5,37 +5,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Main Configurations -->
+    
+    <?php include_once "../config.php"; ?>
+
+    <!-- Main Configurations -->
+
+    <!-- Meta Tags -->
+
+    <meta property="og:title" content="Products | Istanbul City Tours">
+    <meta name="twitter:title" content="Products | Istanbul City Tours">
+    
+    <meta property="og:url" content="<?php echo $DOMAIN; ?>/products">
+    <meta name="twitter:url" content="<?php echo $DOMAIN; ?>/products">
+
+    <meta property="article:section" content="Products">
+
+    <!-- Meta Tags -->
+
     <title>Products | Istanbul City Tours</title>
 
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/extensions/faq.css">
     <link rel="stylesheet" href="../css/products.css">
-    <link rel="shortcut icon" href="../img/logo/shortcut-icon.png">
-
-    <!-- Meta Tags -->
-
-    <meta name="description" content="NuruCare Pricing: Fire 2.0 & Fire 2.5 & Fire Big 3.0">
-    <meta name="keywords" content="SpayAI, SpayAI Inc., SpayAI Pricing, Pricing SpayAI, NuruCare, Nuru HealthCare, Nuru, Machine Learning, AI">
-    <meta name="author" content="SpayAI">
-    <meta property="og:title" content="Pricing | SpayAI">
-    <meta property="og:description" content="NuruCare Pricing: Fire 2.0 & Fire 2.5 & Fire Big 3.0">
-    <meta property="og:keywords" content="SpayAI, SpayAI Inc., SpayAI Pricing, Pricing SpayAI, NuruCare, Nuru HealthCare, Nuru, Machine Learning, AI">
-    <meta property="og:site_name" content="SpayAI Inc.">
-    <meta property="og:url" content="https://spayai.com/pricing">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://spayai.com/img/nuru-photos/samia.spay.png">
-    <meta property="article:section" content="Pricing">
-    <meta name="theme-color" content="#FFFFFF">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@SpayAI">
-    <meta name="twitter:image" content="https://spayai.com/img/nuru-photos/samia.spay.png">
-    <meta name="twitter:url" content="https://spayai.com/pricing">
-    <meta name="twitter:title" content="Pricing | SpayAI">
-    <meta name="twitter:description" content="Artificial intelligence has the potential to benefit almost every aspect of our lives today; It must therefore be developed responsibly and used consciously.">
-
-    <!-- Meta Tags -->
 </head>
 <body>
     <section class="notification" id="notification">
@@ -49,7 +41,7 @@
         </div>
     </section>
     <nav class="relative">
-        <?php include("../layouts/navbar.html") ?>
+        <?php include_once BASE_PATH . "/layouts/navbar.html"; ?>
     </nav>
     <section class="pricing section-container">
         <div class="pricing-container">
@@ -128,7 +120,7 @@
         </div>
     </section>
     <div class="space"></div>
-    <?php include("../layouts/footer.html") ?>
+    <?php include_once BASE_PATH . "/layouts/footer.html"; ?>
     <script src="../scripts/main.js"></script>
     <script src="../scripts/faq.js"></script>
     <script src="../scripts/products.js"></script>

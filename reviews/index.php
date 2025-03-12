@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Main Configurations -->
+    
+    <?php include_once "../config.php"; ?>
+
+    <!-- Main Configurations -->
+
+    <!-- Meta Tags -->
+
+    <meta property="og:title" content="Reviews | Istanbul City Tours">
+    <meta name="twitter:title" content="Reviews | Istanbul City Tours">
+    
+    <meta property="og:url" content="<?php echo $DOMAIN; ?>/reviews">
+    <meta name="twitter:url" content="<?php echo $DOMAIN; ?>/reviews">
+
+    <meta property="article:section" content="Reviews">
+
+    <!-- Meta Tags -->
+
     <title>Reviews | Istanbul City Tours</title>
 
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/reviews.css">
-    <link rel="shortcut icon" href="../img/logo/shortcut-icon.png">
-
-    <!-- Meta Tags -->
-
-    <meta name="description" content="The most powerful version of Nuru yet, with enterprise-level security and privacy.">
-    <meta name="keywords" content="SpayAI, SpayAI Inc., SpayAI Enterprise, Enterprise SpayAI, NuruCare, Nuru HealthCare, Nuru, Machine Learning, AI">
-    <meta name="author" content="SpayAI">
-    <meta property="og:title" content="Enterprise | SpayAI">
-    <meta property="og:description" content="The most powerful version of Nuru yet, with enterprise-level security and privacy.">
-    <meta property="og:keywords" content="SpayAI, SpayAI Inc., SpayAI Enterprise, Enterprise SpayAI, NuruCare, Nuru HealthCare, Nuru, Machine Learning, AI">
-    <meta property="og:site_name" content="SpayAI Inc.">
-    <meta property="og:url" content="https://spayai.com/enterprise">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://spayai.com/img/nuru-photos/safety.io2_1.png">
-    <meta property="article:section" content="Enterprise">
-    <meta name="theme-color" content="#FFFFFF">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@SpayAI">
-    <meta name="twitter:image" content="https://spayai.com/img/nuru-photos/safety.io2_1.png">
-
-    <!-- Meta Tags -->
 </head>
 <body>
     <section class="notification" id="notification">
@@ -41,7 +36,7 @@
         </div>
     </section>
     <nav>
-        <?php include("../layouts/navbar.html") ?>
+        <?php include_once BASE_PATH . "/layouts/navbar.html"; ?>
     </nav>
     <header>
         <div class="header-container">
@@ -118,7 +113,7 @@
             </div>
         </div>
     </section>
-    <?php include("../layouts/footer.html") ?>
+    <?php include_once BASE_PATH . "/layouts/footer.html"; ?>
     <script src="../scripts/main.js"></script>
     <script src="../scripts/reviews.js"></script>
 </body>

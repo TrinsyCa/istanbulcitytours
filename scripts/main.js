@@ -1,3 +1,5 @@
+const BASE_PATH = document.head.querySelector("meta[name='base_path']").content;
+
 // BACKGROUND THEME
 var theme = "light";
 if(theme == "black") {
@@ -50,8 +52,11 @@ function callLink(number) {
   linkButtons.forEach((button) => {
     button.addEventListener("click", () => {
         const link = button.getAttribute("href");
-        if(link) {
+        if(link && button.getAttribute("target") != "_self") {
             window.open(link, "_blank");
+        }
+        else {
+            window.open(link, "_self");
         }
     });
   });
@@ -59,7 +64,7 @@ function callLink(number) {
 
   // SMOOTH SCROLL
 
-  let lastPosition = window.scrollY;
+  /* let lastPosition = window.scrollY;
   let targetPosition = window.scrollY;
   let isScrolling = false;
       
@@ -102,7 +107,7 @@ function callLink(number) {
           isScrolling = true;
           smoothScroll(); // Animasyonu başlat veya devam ettir
       }
-  }, { passive: false });
+  }, { passive: false }); */
   
   
   const body = document.querySelector("body");
@@ -131,21 +136,61 @@ function callLink(number) {
                 menu.classList.remove('active');
             });
         }
+        responsiveMenu();
     });
+
+    function responsiveMenu() {
+        menuBtn.forEach(function(menu) {
+            menu.style.marginTop = "0px";
+        });
+
+        const activeMenuBtn = document.querySelector(".main-menu-btn.active");
+        if (activeMenuBtn) {
+            const activeSubMenu = activeMenuBtn.querySelector(".menu-box");
+            const nextMenuBtn = activeMenuBtn.nextElementSibling;
+            if (window.innerWidth <= 1335) {
+                if (nextMenuBtn && nextMenuBtn.classList.contains("main-menu-btn")) {
+                    if (activeSubMenu) {
+                        nextMenuBtn.style.marginTop = activeSubMenu.scrollHeight + "px";
+                    }
+                } else {
+                    if (nextMenuBtn) {
+                        nextMenuBtn.style.marginTop = "0px";
+                    }
+                    console.log("margin: false");
+                }
+            } else {
+                if (nextMenuBtn) {
+                    nextMenuBtn.style.marginTop = "0px";
+                }
+            }
+        }
+    }
+    window.addEventListener("resize", responsiveMenu);
   
-  const nav = document.querySelector("nav");
-  window.addEventListener("scroll", function() {
-      var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-      menuBtn.forEach(function(menu) {
-          menu.classList.remove("active");
-      })
-      if(scrollPosition > 800) {
-          nav.classList.add("active");
-      }
-      else {
-          nav.classList.remove("active");
-      }
-  });
+    const nav = document.querySelector("nav");
+    const footer = document.querySelector("footer");
+    
+    window.addEventListener("scroll", function() {
+    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    menuBtn.forEach(function(menu) {
+        menu.classList.remove("active");
+    });
+    if(scrollPosition > 800) {
+        nav.classList.add("active");
+    }
+    else {
+        nav.classList.remove("active");
+    }
+
+    if(innerWidth <= 500) {
+        if (footer.getBoundingClientRect().top <= 20) {
+            nav.classList.add("close-fade");
+        } else {
+            nav.classList.remove("close-fade");
+        }
+    }
+});
   
 
   const blurDivs = document.querySelectorAll(".blur-load");
@@ -164,8 +209,41 @@ blurDivs.forEach(div => {
         img.addEventListener("load", loaded);
     }
 });
-  
 
+// Fixed Buttons
+
+const fixedBtn = document.querySelectorAll(".fixed-contactBtn");
+fixedBtn.forEach((btn) => {
+    const btnDetails = btn.querySelector(".fixed-contactDetails");
+    btn.addEventListener("mouseenter", () => {
+        btn.classList.add("hover");
+        btnDetails.style.width = btnDetails.scrollWidth + "px";
+    });
+    btn.addEventListener("mouseleave", () => {
+        btn.classList.remove("hover");
+        btnDetails.style.width = "0";
+    });
+});
+
+// Navbar Scroll
+
+window.addEventListener("DOMContentLoaded", navbarBg);
+window.addEventListener("scroll", navbarBg);
+
+function navbarBg() {
+    let navbar = document.querySelector(".navbar");
+
+    if(!document.querySelector(".relative .navbar")) {  
+        if (window.scrollY > 100) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    }
+    else {
+        navbar.classList.add("scrolled");
+    }
+}
 
 // NOTIFICATION
 
@@ -187,7 +265,6 @@ const closeNotification = document.getElementById("closeNotification");
   closeNotification.addEventListener("click", function() {
       clearTimeout(notificationTimeout);
       clearTimeout(notificationTimeoutR);
-      body.classList.remove("lock");
       notification.classList.remove("active");
   });
   const notificationText = document.getElementById("notificationText");
@@ -204,13 +281,70 @@ const closeNotification = document.getElementById("closeNotification");
         }
     }
       notification.classList.add("active");
-      body.classList.add("lock");
       notificationTimeout = setTimeout(() => {
           notification.classList.remove("active");
       }, 5000);
-      notificationTimeoutR = setTimeout(() => {
-          body.classList.remove("lock");
-      }, 5500);
   }
 
 // NOTIFICATION
+
+// Contact Focus Image
+
+contactFocus();
+
+window.addEventListener("resize", contactFocus);
+
+function contactFocus() {
+    const contactFocus = document.querySelectorAll(".focus.contact");
+
+    contactFocus.forEach((contact) => {
+        const contactIframe = contact.querySelector(".focus-img iframe");
+        contactIframe.style.height = contact.querySelector(".focus-detail").scrollHeight + "px";
+    });
+}
+
+
+// EMAIL Post
+
+$(document).ready(function () {
+    $("#emailForm").submit(function (event) {
+        event.preventDefault(); // Sayfanın yenilenmesini engelle
+        
+        // <meta name="base_path"> içeriğini al
+        var basePath = $("meta[name='base_path']").attr("content") || "";
+
+        // Form verilerini al ve base_path'i ekle
+        var formData = $(this).serialize() + "&base_path=" + encodeURIComponent(basePath);
+
+        $.ajax({
+            type: "POST",
+            url: "assets/php/email_post.php",
+            data: formData,
+            success: function (response) {
+                $("#result").html(response); // Yanıtı ekrana yazdır
+                $("#emailForm")[0].reset(); // Formu sıfırla
+            },
+            error: function () {
+                $("#result").html("<p style='color:red;'>Form gönderilirken hata oluştu.</p>");
+            }
+        });
+
+        contactFocus();
+    });
+});
+
+// MENUBAR
+
+function menuBars(status) {
+    const menus = document.querySelectorAll(".nav-container .menu-side");
+    if(status == "open") {
+        menus.forEach((navMenu) => {
+            navMenu.classList.add("active");
+        });
+    }
+    else if(status == "close") {
+        menus.forEach((navMenu) => {
+            navMenu.classList.remove("active");
+        });
+    }
+}

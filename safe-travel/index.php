@@ -1,38 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Main Configurations -->
+    
+    <?php include_once "../config.php"; ?>
+
+    <!-- Main Configurations -->
+
+    <!-- Meta Tags -->
+
+    <meta property="og:title" content="Safe Travel | Istanbul City Tours">
+    <meta name="twitter:title" content="Safe Travel | Istanbul City Tours">
+    
+    <meta property="og:url" content="<?php echo $DOMAIN; ?>/safe-travel">
+    <meta name="twitter:url" content="<?php echo $DOMAIN; ?>/safe-travel">
+
+    <meta property="article:section" content="Safe Travel">
+
+    <!-- Meta Tags -->
+
     <title>Safe Travel | Istanbul City Tours</title>
 
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/extensions/faq.css">
     <link rel="stylesheet" href="../css/extensions/focus.css">
-    <link rel="shortcut icon" href="../img/logo/shortcut-icon.png">
-
-    <!-- Meta Tags -->
-
-    <meta name="description" content="SpayAI attaches importance to your privacy and security, as well as strengthening your data privacy and sincerity in our products..">
-    <meta name="keywords" content="SpayAI, SpayAI Inc., SpayAI Security, Security SpayAI, NuruCare, Nuru HealthCare, Nuru, Machine Learning, AI">
-    <meta name="author" content="SpayAI">
-    <meta property="og:title" content="Security | SpayAI">
-    <meta property="og:description" content="SpayAI attaches importance to your privacy and security, as well as strengthening your data privacy and sincerity in our products..">
-    <meta property="og:keywords" content="SpayAI, SpayAI Inc., NuruCare, Nuru HealthCare, Nuru, Machine Learning, AI">
-    <meta property="og:site_name" content="SpayAI Inc.">
-    <meta property="og:url" content="https://spayai.com/security">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://spayai.com/img/nuru-photos/opus.spay.png">
-    <meta property="article:section" content="Security">
-    <meta name="theme-color" content="#FFFFFF">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@SpayAI">
-    <meta name="twitter:image" content="https://spayai.com/img/nuru-photos/opus.spay.png">
-    <meta name="twitter:url" content="https://spayai.com/security">
-    <meta name="twitter:title" content="Security | SpayAI">
-    <meta name="twitter:description" content="SpayAI attaches importance to your privacy and security, as well as strengthening your data privacy and sincerity in our products..">
-
-
-    <!-- Meta Tags -->
 </head>
 <body>
     <section class="notification" id="notification">
@@ -46,7 +37,7 @@
         </div>
     </section>
     <nav class="relative">
-        <?php include("../layouts/navbar.html"); ?>
+        <?php include_once BASE_PATH . "/layouts/navbar.html"; ?>
     </nav>
     <div class="space"></div>
     <div class="focus section-container">
@@ -103,8 +94,8 @@
         </div>
     </div>
     <div class="space"></div>
-    <?php include("../layouts/faq.html"); ?>
-    <?php include("../layouts/footer.html"); ?>
+    <?php include_once BASE_PATH . "/layouts/faq.html"; ?>
+    <?php include_once BASE_PATH . "/layouts/footer.html"; ?>
     <script src="../scripts/main.js"></script>
     <script src="../scripts/faq.js"></script>
 </body>

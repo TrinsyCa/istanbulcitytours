@@ -1,44 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Main Configurations -->
+    
+    <?php include_once "config.php"; ?>
+
+    <!-- Main Configurations -->
+
+    <!-- Meta Tags -->
+
+    <meta property="og:title" content="Istanbul City Tours">
+    <meta name="twitter:title" content="Istanbul City Tours">
+    
+    <meta property="og:url" content="<?php echo $DOMAIN; ?>">
+    <meta name="twitter:url" content="<?php echo $DOMAIN; ?>">
+
+    <meta property="article:section" content="Home">
+
+    <!-- Meta Tags -->
+
     <title>Istanbul City Tours</title>
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main-responsive.css">
     <link rel="stylesheet" href="css/extensions/faq.css">
     <link rel="stylesheet" href="css/extensions/focus.css">
     <link rel="stylesheet" href="css/extensions/safety.css">
     <link rel="stylesheet" href="css/extensions/jobcard.css">
     <link rel="stylesheet" href="css/homepage.css">
-    <link rel="shortcut icon" href="img/logo/shortcut-icon.png">
-
-    <!-- Meta Tags -->
-
-    <meta name="description" content="Discover Nuru: Meet the medical technology creator">
-    <meta name="keywords" content="Istanbul City Tours, Istanbul City Tours Inc., Istanbul City Tours Home, Home Istanbul City Tours,NuruCare, Nuru HealthCare, Nuru, Machine Learning, AI">
-    <meta name="author" content="Istanbul City Tours">
-    <meta property="og:title" content="Istanbul City Tours">
-    <meta property="og:description" content="Discover Nuru: Meet the medical technology creator">
-    <meta property="og:keywords" content="Istanbul City Tours, Istanbul City Tours Inc., Istanbul City Tours Home, Home Istanbul City Tours,NuruCare, Nuru HealthCare, Nuru, Machine Learning, AI">
-    <meta property="og:site_name" content="Istanbul City Tours Inc.">
-    <meta property="og:url" content="https://Istanbul City Tours.com">
-    <meta property="og:type" content="article">
-    <meta property="og:card" content="summary_large_image">
-    <meta property="og:image" content="https://Istanbul City Tours.com/img/logo/Istanbul City Tours-Logo.png">
-    <meta property="article:section" content="Home">
-    <meta name="theme-color" content="#FFFFFF">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@Istanbul City Tours">
-    <meta name="twitter:image" content="https://Istanbul City Tours.com/img/logo/Istanbul City Tours-Logo.png">
-    <meta name="twitter:url" content="https://Istanbul City Tours.com">
-    <meta name="twitter:title" content="Istanbul City Tours">
-    <meta name="twitter:description" content="Istanbul City Tours, Istanbul City Tours Inc., Istanbul City Tours Home, Home Istanbul City Tours,NuruCare, Nuru HealthCare, Nuru, Machine Learning, AI">
-
-    <!-- Meta Tags -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script>
 </head>
 <body>
     <section class="notification" id="notification">
@@ -52,14 +41,14 @@
         </div>
     </section>
     <nav>
-        <?php include("layouts/navbar.html"); ?>
+        <?php include_once BASE_PATH . "/layouts/navbar.html"; ?>
     </nav>
     <header>
         <div class="header-container">
             <div class="header-content">
                 <h1>Istanbul City Tours</h1>
                 <h2>History and More</h2>
-                <a class="main-btn" onclick="window.location.href='#features'"><span>Discover Istanbul Now</span></a>
+                <button class="main-btn link-btn" href="#products" target="_self"><span>Discover Istanbul Now</span></button>
             </div>
         </div>
         <div class="header-video">
@@ -72,7 +61,7 @@
         </div>
     </header>
     <div class="space"></div>
-    <section class="features section-container" id="features">
+    <section class="features section-container" id="products">
         <div class="features-container">
             <div class="features-title">
                 <h1 class="subTitle"><span class="magicText">Best Quality</span> Daily City Tours</h1>
@@ -234,8 +223,9 @@
         </div>
     </section>
     <div class="space"></div>
-    <section class="jobCard section-container">
-        <div class="jobCard-container">
+    <section class="jobCard section-container swiper mySwiper">
+        <div class="jobCard-container swiper-wrapper">
+            <div class="swiper-slide">
             <div class="jobBox">
                 <div class="jobBox-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
@@ -265,6 +255,8 @@
                     </button>
                 </div>
             </div>
+            </div>
+            <div class="swiper-slide">
             <div class="jobBox">
                 <div class="jobBox-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
@@ -282,6 +274,8 @@
                     <p>Our drivers are experienced, courteous, and dedicated to ensuring your safety and comfort throughout your journey.</p>
                 </div>
             </div>
+            </div>
+            <div class="swiper-slide">
             <div class="jobBox">
                 <div class="jobBox-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
@@ -299,6 +293,8 @@
                     <p>Our tours are designed to showcase the best destinations, balancing sightseeing, adventure, and local experiences.</p>
                 </div>
             </div>
+            </div>
+            <div class="swiper-slide">
             <div class="jobBox">
                 <div class="jobBox-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -331,7 +327,9 @@
                     </button>
                 </div>
             </div>
+            </div>
         </div>
+        <div class="swiper-pagination"></div>
     </section>
     <div class="space"></div>
     <div class="space"></div>
@@ -398,8 +396,10 @@
             <button class="main-btn" onclick="window.location.href='/gallery/'">Show Gallery</button>
         </div>
     </div>
-    <?php include("layouts/faq.html") ?>
-    <?php include("layouts/footer.html"); ?>
+    <?php include_once BASE_PATH . "/layouts/faq.html" ?>
+    <?php include_once BASE_PATH . "/layouts/footer.html"; ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/faq.js"></script>
     <script src="scripts/homepage.js"></script>

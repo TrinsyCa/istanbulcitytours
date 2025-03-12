@@ -1,33 +1,32 @@
+<?php
+    header("Location: https://wa.me/905301267153");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | SpayAI</title>
+    <!-- Main Configurations -->
+    
+    <?php include_once "../config.php"; ?>
+
+    <!-- Main Configurations -->
+
+    <!-- Meta Tags -->
+
+    <meta property="og:title" content="Contact Us | Istanbul City Tours">
+    <meta name="twitter:title" content="Contact Us | Istanbul City Tours">
+    
+    <meta property="og:url" content="<?php echo $DOMAIN; ?>/contact">
+    <meta name="twitter:url" content="<?php echo $DOMAIN; ?>/contact">
+
+    <meta property="article:section" content="Contact Us">
+
+    <!-- Meta Tags -->
+
+    <title>Contact Us | SpayAI</title>
 
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/contact.css">
-    <link rel="shortcut icon" href="../img/logo/shortcut-icon.png">
-
-    <!-- Meta Tags -->
-
-    <meta name="description" content="Contact with SpayAI for Business">
-    <meta name="keywords" content="SpayAI, SpayAI Inc., SpayAI Contact, Contact SpayAI, NuruCare, Nuru HealthCare, Nuru, Machine Learning, AI">
-    <meta name="author" content="SpayAI">
-    <meta property="og:title" content="Contact | SpayAI">
-    <meta property="og:description" content="The most powerful version of Nuru yet, with enterprise-level security and privacy.">
-    <meta property="og:keywords" content="SpayAI, SpayAI Inc., SpayAI Contact, Contact SpayAI, NuruCare, Nuru HealthCare, Nuru, Machine Learning, AI">
-    <meta property="og:site_name" content="SpayAI Inc.">
-    <meta property="og:url" content="https://spayai.com/contact">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://spayai.com/img/logo/SpayAI%20Logo.png">
-    <meta property="article:section" content="Contact">
-    <meta name="theme-color" content="#FFFFFF">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@SpayAI">
-    <meta name="twitter:image" content="https://spayai.com/img/nuru-photos/safety.io.png">
-
-    <!-- Meta Tags -->
 </head>
 <body>
     <section class="notification" id="notification">
@@ -41,7 +40,7 @@
         </div>
     </section>
     <nav class="relative">
-        <?php include("../layouts/navbar.html") ?>
+        <?php include_once BASE_PATH . "/layouts/navbar.html"; ?>
     </nav>
     <section class="contact section-container">
         <div class="contact-container">
@@ -133,7 +132,7 @@
             </div>
         </div>
     </section>
-    <?php include("../layouts/footer.html"); ?>
+    <?php include_once BASE_PATH . "/layouts/footer.html"; ?>
     <script src="../scripts/main.js"></script>
     <script src="../scripts/contact.js"></script>
 </body>

@@ -79,10 +79,7 @@ body.bg-black .header-video-container::after {
     transform: translateX(-50%);
 }
 @keyframes headerTextAnim {
-    0% {
-        bottom: -20px;
-    }
-    100% {
+    to {
         bottom: 40px;
     }
 }
@@ -92,16 +89,20 @@ body.bg-black .header-video-container::after {
     align-items: center;
 }
 .header-content h1 {
-    font-size: 58px;
+    font-size: 3.5rem;
     font-weight: 100;
-    max-width: 850px;
     margin-bottom: 0.5rem;
+    white-space: nowrap;
 }
 .header-content h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 100;
     max-width: 850px;
     margin-bottom: 2rem;
+    white-space: nowrap;
+}
+#products {
+    scroll-margin-top: 100px;
 }
 .features-col {
     width: 100%;
@@ -189,13 +190,10 @@ body.bg-black .header-video-container::after {
     transition: 0.4s height;
     overflow: hidden;
 }
-@media (hover: hover) {
+@media (hover: hover) and (max-width: 1335px) {
     .feature-card-list {
         height: 0;
     }
-}
-.feature-card-container:hover .feature-card-list {
-    padding-bottom: 15px;
 }
 .feature-card-list li {
     color: white;

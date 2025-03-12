@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Main Configurations -->
+    
+    <?php include_once "../config.php"; ?>
+
+    <!-- Main Configurations -->
+
+    <!-- Meta Tags -->
+
+    <meta property="og:title" content="About | Istanbul City Tours">
+    <meta name="twitter:title" content="About | Istanbul City Tours">
+    
+    <meta property="og:url" content="<?php echo $DOMAIN; ?>/about">
+    <meta name="twitter:url" content="<?php echo $DOMAIN; ?>/about">
+
+    <meta property="article:section" content="About">
+
+    <!-- Meta Tags -->
+
     <title>About | Istanbul City Tours</title>
 
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/extensions/safety.css">
     <link rel="stylesheet" href="../css/extensions/focus.css">
     <link rel="stylesheet" href="../css/safety.css">
-    <link rel="shortcut icon" href="../img/logo/shortcut-icon.png">
-
-    <!-- Meta Tags -->
-
-    <meta name="description" content="SpayAI is a company operating in the field of artificial intelligence research, development, and digital technology..">
-    <meta name="keywords" content="SpayAI, SpayAI Inc., SpayAI About, About SpayAI, NuruCare, Nuru HealthCare, Nuru, Machine Learning, AI">
-    <meta name="author" content="SpayAI">
-    <meta property="og:title" content="About | SpayAI">
-    <meta property="og:description" content="SpayAI is a company operating in the field of artificial intelligence research, development, and digital technology..">
-    <meta property="og:keywords" content="SpayAI, SpayAI Inc., SpayAI About, About SpayAI, NuruCare, Nuru HealthCare, Nuru, Machine Learning, AI">
-    <meta property="og:site_name" content="SpayAI Inc.">
-    <meta property="og:url" content="https://spayai.com/about">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://spayai.com/img/nuru-photos/spayai.iot.png">
-    <meta property="article:section" content="About">
-    <meta name="theme-color" content="#FFFFFF">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@SpayAI">
-    <meta name="twitter:image" content="https://spayai.com/img/nuru-photos/spayai.iot.png">
-    <meta name="twitter:url" content="https://spayai.com/about">
-    <meta name="twitter:title" content="About | SpayAI">
-    <meta name="twitter:description" content="SpayAI is a company operating in the field of artificial intelligence research, development, and digital technology..">
-
-    <!-- Meta Tags -->
 </head>
 <body>
     <section class="notification" id="notification">
@@ -46,7 +38,7 @@
         </div>
     </section>
     <nav class="relative">
-        <?php include("../layouts/navbar.html"); ?>
+        <?php include_once BASE_PATH . "/layouts/navbar.html"; ?>
     </nav>
     <br>
     <section class="safety section-container">
@@ -99,7 +91,7 @@
             </div>
         </div>
     </div>
-    <?php include("../layouts/footer.html"); ?>
+    <?php include_once BASE_PATH . "/layouts/footer.html"; ?>
     <div class="space"></div>
     <script src="../scripts/main.js"></script>
 </body>
