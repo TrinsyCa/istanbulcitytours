@@ -268,8 +268,8 @@
         flex-wrap: nowrap !important;
     }
     .jobCard .jobCard-container {
-        justify-content: start;
-        gap: 0;
+        justify-content: start !important;
+        gap: 0 !important;
     }
     .section-container.jobCard {
         width: 100% !important;
@@ -281,7 +281,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 50%;
+        min-width: 100%;
     }
     .swiper-pagination-bullet-active {
         background-color: #000 !important;
