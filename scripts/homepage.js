@@ -9,9 +9,11 @@ featuresCol.forEach((fetureCol) => {
         productList.forEach((list) => {
             featuresStart(fetureCol, product, list);
             product.addEventListener("mouseenter", () => {
-                    list.style.height = list.scrollHeight + 5 + "px";
-                    list.style.paddingBottom = "15px";
-                    fetureCol.style.height = product.scrollHeight + list.scrollHeight + 5 + "px";
+                    if(innerWidth > 768) {
+                        list.style.height = list.scrollHeight + 5 + "px";
+                        list.style.paddingBottom = "15px";
+                        fetureCol.style.height = product.scrollHeight + list.scrollHeight + 5 + "px";
+                    }
             });
             product.addEventListener("mouseleave", () => {
                 productMouseLeave();

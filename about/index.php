@@ -21,7 +21,6 @@
 
     <title>About | Istanbul City Tours</title>
 
-    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/extensions/safety.css">
     <link rel="stylesheet" href="../css/extensions/focus.css">
     <link rel="stylesheet" href="../css/safety.css">
@@ -93,6 +92,5 @@
     </div>
     <?php include_once BASE_PATH . "/layouts/footer.html"; ?>
     <div class="space"></div>
-    <script src="../scripts/main.js"></script>
 </body>
 </html>

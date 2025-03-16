@@ -27,3 +27,6 @@
 <meta name="twitter:image" content="<?php echo $DOMAIN; ?>/img/logo/logo.webp">
 
 <meta name="base_path" content="<?php echo BASE_PATH; ?>">
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main-responsive.css">

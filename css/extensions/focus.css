@@ -2,6 +2,12 @@
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
+.focus.gallery .focus-container {
+    margin-top: 0;
+}
+.focus.gallery .focus-container .focus-img {
+    aspect-ratio: 1/1;
+}
 .focus-container {
     display: flex;
     align-items: start;
@@ -25,7 +31,7 @@
     transform: translateX(100px);
     opacity: 0;
 }
-.focus-anim-open .focus-detail {
+.focus-anim.anim-open .focus-detail {
     animation: cometo-screen 1s ease-in-out forwards;
     transform: translateX(-100px);
     opacity: 0;
@@ -92,6 +98,11 @@
     justify-content: center;
     align-items: center;
     margin-top: 1.5rem;
+}
+@media (max-width: 1335px) {
+    .focus-detail .focus-buttons.longBtns {
+        flex-direction: column;
+    }
 }
 .focus a,
 .focus button {
@@ -179,7 +190,7 @@
     scale: .3;
     opacity: 0;
 }
-.focus-anim-open .focus-img {
+.focus-anim.anim-open .focus-img {
     animation: cometo-screen 1s ease-in-out forwards;
     transform: translateX(100px);
     opacity: 0;

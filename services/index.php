@@ -21,7 +21,6 @@
 
     <title>Services | Istanbul City Tours</title>
 
-    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/extensions/safety.css">
     <link rel="stylesheet" href="../css/extensions/focus.css">
     <link rel="stylesheet" href="../css/services.css">
@@ -38,7 +37,7 @@
             </div>
         </div>
     </section>
-    <nav class="relative">
+    <nav>
         <?php include_once BASE_PATH . "/layouts/navbar.html"; ?>
     </nav>
     <section class="safety section-container">
@@ -68,7 +67,7 @@
                     Arriving in a new city should be stress-free and comfortable. Our VIP airport transfer service ensures that your journey begins smoothly from the moment you land. Whether you're arriving at Istanbul Airport (IST) or Sabiha Gökçen Airport (SAW), our professional chauffeur will be waiting for you with a personalized name sign, ready to escort you to your luxurious Maybach Vito.<br><br>
                     Our VIP vehicles are equipped with plush reclining seats, starlight ceilings, Android TV, onboard refreshments, and full climate control, ensuring a first-class experience from start to finish. Avoid the hassle of taxis and crowded shuttles—travel in style and privacy, with direct door-to-door service to your hotel, business meeting, or any destination in Istanbul. Experience seamless, punctual, and luxurious transfers with Cool Travel Istanbul
                 </p>
-                <div class="focus-buttons">
+                <div class="focus-buttons longBtns">
                     <button class="main-btn" onclick="wpLink('Hi, I Want To Reserve Istanbul Airport Transfer');">Book Istanbul Airport Transfer</button>
                     <button class="main-btn" onclick="wpLink('Hi, I Want To Reserve Sabiha Gökçen Airport Transfer');">Book Sabiha Gökçen Airport Transfer</button>
                 </div>
@@ -79,7 +78,6 @@
         </div>
     </div>
     <div class="space">
-        <hr class="hr-secondary">
     </div>
     <div class="focus section-container">
         <div class="focus-container focus-anim-r">
@@ -103,7 +101,6 @@
     </div>
     <div class="space"></div>
     <?php include_once BASE_PATH . "/layouts/footer.html"; ?>
-    <script src="../scripts/main.js"></script>
     <script src="../scripts/pricing.js"></script>
 </body>
 </html>

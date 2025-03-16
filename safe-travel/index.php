@@ -21,7 +21,6 @@
 
     <title>Safe Travel | Istanbul City Tours</title>
 
-    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/extensions/faq.css">
     <link rel="stylesheet" href="../css/extensions/focus.css">
 </head>
@@ -36,12 +35,12 @@
             </div>
         </div>
     </section>
-    <nav class="relative">
+    <nav>
         <?php include_once BASE_PATH . "/layouts/navbar.html"; ?>
     </nav>
     <div class="space"></div>
     <div class="focus section-container">
-        <div class="focus-container focus-anim-open">
+        <div class="focus-container focus-anim anim-open">
             <div class="focus-detail">
                 <h1 class="bigTitle">
                     Safe Airport Transfer
@@ -96,7 +95,6 @@
     <div class="space"></div>
     <?php include_once BASE_PATH . "/layouts/faq.html"; ?>
     <?php include_once BASE_PATH . "/layouts/footer.html"; ?>
-    <script src="../scripts/main.js"></script>
     <script src="../scripts/faq.js"></script>
 </body>
 </html>

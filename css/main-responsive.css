@@ -63,6 +63,13 @@
     .header-details {
         width: 90%;
     }
+    .bigTitle {
+        font-size: 2.5rem;
+    }
+    .bigTitle svg {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
     .subTitle:not(#iletisim .subTitle, #hizmetler .subTitle, #hakkimizda .subTitle)  {
         font-size: 1.5rem;
         gap: 5px;
@@ -160,6 +167,9 @@
     .section-container.jobCard {
         width: 620px !important;
     }
+    .bigParagraph {
+        font-size: 2rem;
+    }
 }
 @media (max-width: 950px) {
     .footer-bottom {
@@ -167,6 +177,9 @@
     }
 }
 @media (max-width: 768px) {
+    .bigParagraph {
+        font-size: 5vw;
+    }
     .subTitle:not(#iletisim .subTitle, .subTitle.center)  {
         font-size: 1.5rem;
         gap: 5px;
@@ -262,6 +275,10 @@
     .features-col {
         gap: 15px !important;
     }
+    .magicText {
+        padding: 0 5px;
+        border-radius: 8px;
+    }
 }
 @media (max-width: 660px) {
     .jobCard .jobCard-container {
@@ -274,19 +291,18 @@
     .section-container.jobCard {
         width: 100% !important;
     }
-    .swiper-slide {
+    .jobCard .swiper-slide {
         text-align: center;
         font-size: 18px;
-        background: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
         min-width: 100%;
     }
-    .swiper-pagination-bullet-active {
+    .jobCard .swiper-pagination-bullet-active {
         background-color: #000 !important;
     }
-    .swiper-slide .jobBox {
+    .jobCard .swiper-slide .jobBox {
         height: 100% !important;
     }
 }
@@ -350,6 +366,13 @@
     }
     .header-details {
         bottom: 15% !important;
+    }
+    .bigTitle {
+        font-size: 8vw;
+    }
+    .bigTitle svg {
+        width: 5vw;
+        height: 5vw;
     }
     .subTitle:not(#iletisim .subTitle, .subTitle.center) {
         font-size: 5.5vw;
@@ -458,7 +481,7 @@
     .nav-container .menu-side .social-media {
         scale: 1.2;
     }
-    .swiper-slide .jobBox {
+    .jobCard .swiper-slide .jobBox {
         scale: 0.8 !important;
     }
 }
@@ -469,7 +492,7 @@
     }
 }
 @media (max-width: 260px) {
-    .swiper-slide .jobBox {
+    .jobCard .swiper-slide .jobBox {
         scale: 0.65 !important;
     }
 }

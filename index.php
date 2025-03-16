@@ -21,13 +21,11 @@
 
     <title>Istanbul City Tours</title>
 
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/main-responsive.css">
+    <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/extensions/faq.css">
     <link rel="stylesheet" href="css/extensions/focus.css">
     <link rel="stylesheet" href="css/extensions/safety.css">
     <link rel="stylesheet" href="css/extensions/jobcard.css">
-    <link rel="stylesheet" href="css/homepage.css">
 </head>
 <body>
     <section class="notification" id="notification">
@@ -400,8 +398,7 @@
     <?php include_once BASE_PATH . "/layouts/footer.html"; ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/faq.js"></script>
     <script src="scripts/homepage.js"></script>
+    <script src="scripts/faq.js"></script>
 </body>
 </html>

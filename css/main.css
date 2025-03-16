@@ -2,11 +2,11 @@
     /* --bg-clr: #111;
     --bg-clr-2: rgb(30,30,30);
     --text-clr: white; */
-    --bg-clr: rgb(200,200,200);
+    --bg-clr: rgb(230,230,230);
     --bg-clr-2: rgb(255,255,255);
     --text-clr: #111;
     --shadow-clr: rgb(0,0,0,0.3);
-    --magic-clr: #33E0A1;
+    --magic-clr: #2abd87;
     --hr-secondary: rgb(0,0,0,0.5);
     --detailGroupBoxBg: #b6b6b6;
     --detailGroupBoxBgHover: #bdbdbd;
@@ -99,6 +99,14 @@ a,
     background-color: transparent;
     border: 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+a svg,
+.link-btn svg {
+    width: 1.5rem;
+    height: 1.5rem;
 }
 a:hover,
 .link-btn:hover {
@@ -166,10 +174,13 @@ a:hover,
 .bigTitle {
     font-size: 4rem;
     font-weight: 100;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 .bigTitle svg {
-    width: 50px;
-    height: 50px;
+    width: 4rem;
+    height: 4rem;
 }
 .bigParagraph {
     font-size: 3rem;
@@ -413,6 +424,19 @@ nav.active .menu-box {
     width: fit-content;
     cursor: pointer;
 }
+.main-btn.white {
+    border: 2px solid white;
+    box-shadow: 0 0 3px white;
+    color: white;
+}
+.main-btn.white:hover {
+    background-color: white;
+    color: black;
+}
+.main-btn.white:active {
+    background-color: white;
+    color: black;
+}
 .main-btn:hover,
 .main-btn:active {
     border: 2px solid transparent;
@@ -612,6 +636,23 @@ footer .social-header {
 }
 .footer-signature .signature .creator:active {
     letter-spacing: 1px;
+}
+.right-top-of-box {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    padding: 8px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 100;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right-top-of-box.tripadvisor {
+    background-color: #34E0A1;
 }
 @keyframes opacityAnim {
     to {
