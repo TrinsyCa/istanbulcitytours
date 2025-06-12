@@ -483,6 +483,7 @@ nav.active .menu-box {
     border-radius: 30px;
 }
 .magicText {
+    width: fit-content;
     background-color: var(--magic-clr);
     color: var(--bg-clr);
     padding: 5px 10px;
@@ -612,6 +613,12 @@ footer .social-header {
     justify-content: center;
     align-items: center;
     padding: 2rem;
+}
+.footer-signature .signature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
 }
 .footer-signature .signature .creator {
     position: relative;

@@ -1,5 +1,5 @@
 <?php
-    header("Location: https://cooltravelistanbul.com/products");
+    header("Location: https://cooltravelistanbul.com/#istanbul-daily-tours-list");
 ?>
 
 <!DOCTYPE html>
